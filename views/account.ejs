@@ -1,0 +1,25 @@
+<% if (!user) { %>
+    <h2>Welcome! Please log in.</h2>
+    <a href="/login">Log In</a>
+    <% } else { %>
+        <p>displayName:
+            <%= user.familyName +" " + user.givenName %>
+        </p>
+        <p>givenName:
+            <%= user.givenName %>
+        </p>
+        <p>familyName:
+            <%= user.familyName %>
+        </p>
+        <p>UPN:
+            <%= user.email %>
+        </p>
+        <p>Роли:
+            <%= user.roles %>
+        </p>
+        ##Next steps
+        <p>Full Claimes</p>
+        <%- JSON.stringify(user) %>
+            <p></p>
+            <a href="/logout">Log Out</a>
+            <% } %>
