@@ -41,6 +41,6 @@ initialDate();
 
 var findUser = (email) => users.find(item => item.email == email) || null
 
-var getBase = () => ({ company, department, users })
+var getBase = () => ({ company, department, users, usersMap })
 
 module.exports = { getBase, findUser };
