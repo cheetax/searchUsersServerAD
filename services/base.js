@@ -34,7 +34,8 @@ initialDate = async () => {
     companyMap = groupBy(users, user => user.company, user => user)    
     departmentMap = groupBy(users, user => user.company, user => user.department)
     departmentMap.forEach((item, key) => department.push({company: key, department: collapseBy(item, item => item) }))
-    companyMap.forEach((item, key) => usersMap.set(key, groupBy(item, user => user.department, user => user)))
+    companyMap.forEach((item, key) => usersMap.set(key, Array.from(groupBy(item, user => user.department, user => user).entries())))
+    usersMap = Array.from(usersMap.entries())
 }
 
 initialDate();
