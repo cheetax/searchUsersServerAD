@@ -1,14 +1,6 @@
 
 var ActiveDirectory = require('activedirectory2');
-
-var config = {
-    url: 'ldap://172.22.123.3',
-    baseDN: 'dc=uc,dc=local',
-    pageSize: 3000,
-    username: 'svc-1C-server@uc.local',
-    password: 'J@6"1MW"qMdY:8Mt+@p,',
-    includeDeleted: false,
-}
+var config = require('../config').creds;
 
 const getUsersADAsync = () => new Promise(resolve => {
     var opts = {
