@@ -44,6 +44,4 @@ const getUsersAD = async () => {
     return users;
 }
 
-
-
 module.exports = getUsersAD;
